@@ -7,5 +7,5 @@ module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
   router.get('/qrcode', controller.home.qrcode);
-  router.use('/', controller.home.wechatreplay);
+  router.post('/', controller.home.wechatreplay);
 };
