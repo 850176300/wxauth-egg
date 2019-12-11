@@ -28,10 +28,8 @@ class HomeController extends Controller {
 
   async wechatreplay(){
     const {ctx} = this;
-    
-
     try{
-      ctx.logger.info("---------on----data-----dd-----"+ctx.data);
+      ctx.logger.info("---------on----data-----dd-----"+ctx.params+ctx.queries+ctx.querystring);
       var buffer = [];
       ctx.req.on('readable', function(){
         ctx.logger.info("---------on----readable-----dd-----");
@@ -52,7 +50,7 @@ class HomeController extends Controller {
       });
 
       ctx.req.on('close', function(){
-        ctx.logger.info("---------on----error----------");
+        ctx.logger.info("---------on----close----------");
       });
 
     }catch(e){
