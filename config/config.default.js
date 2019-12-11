@@ -51,13 +51,20 @@ module.exports = appInfo => {
     accessTokenKey: 'WXACCESS_TOKENKEY',
     accessTokenUrl : 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx3368ac6d8798843e&secret=da2f4510bac125d8c88ab0924338660f',
     qrcodeUrl: 'https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=TOKEN'
-  }
+  };
 
   config.cluster = {
     listen:{
       port:80
     }
-  }
+  };
+
+  config.security = {
+    csrf:{
+      enable:false,
+    }
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

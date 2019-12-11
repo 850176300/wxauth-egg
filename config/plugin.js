@@ -12,10 +12,5 @@ exports.redis = {
   package: 'egg-redis',
 };
 
-exports.security = {
-  xframe:{
-    enable:false,
-  }
-}
 
 
