@@ -1,11 +1,17 @@
 'use strict';
-const wechat = require('wechat');
+
 /**
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
   const { router, controller } = app;
+  const wechat = app.middleware.wechat({
+    token:'1234qwer',
+    appid:'wx3368ac6d8798843e',
+    encodingAESKey:''
+  });
   router.get('/', controller.home.index);
   router.get('/qrcode', controller.home.qrcode);
-  router.post('/', controller.home.wechatreplay);
+  router.get('/wechat', wechat);
+  router.post('/wechat', wechat);
 };
