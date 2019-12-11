@@ -10,8 +10,8 @@ module.exports = app => {
     appid:'wx3368ac6d8798843e',
     encodingAESKey:''
   });
-  router.get('/', controller.home.index);
+  // router.get('/', controller.home.index);
   router.get('/qrcode', controller.home.qrcode);
-  router.get('/wechat', wechat);
-  router.post('/wechat', wechat);
+  router.get('/', wechat);
+  router.post('/', wechat);
 };
