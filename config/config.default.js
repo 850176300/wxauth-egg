@@ -53,6 +53,11 @@ module.exports = appInfo => {
     qrcodeUrl: 'https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=TOKEN'
   }
 
+  config.cluster = {
+    listen:{
+      port:80
+    }
+  }
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
