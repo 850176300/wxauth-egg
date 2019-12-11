@@ -29,7 +29,7 @@ class HomeController extends Controller {
   async wechatreplay(){
     const {ctx} = this;
     try{
-      ctx.logger.info("---------on----data-----dd-----"+ctx.params+ctx.queries+ctx.querystring);
+      ctx.logger.info("---------on----data-----dd-----"+JSON.stringify(ctx.params)+',,,'+JSON.stringify(ctx.queries));
       var buffer = [];
       ctx.req.on('readable', function(){
         ctx.logger.info("---------on----readable-----dd-----");
