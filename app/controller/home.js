@@ -28,14 +28,15 @@ class HomeController extends Controller {
 
   async wechatreplay(){
     const {ctx} = this;
-    ctx.logger.info("--------wechatreplay--------", ctx.query);
     try{
       var buffer = [];
       ctx.req.on('data', function(data){
+        ctx.logger.info("---------on----data----------");
         buffer.push(data);
       });
 
       ctx.req.on('end', function(){
+        ctx.logger.info("---------on----end----------");
         parseString(Buffer.concat(buffer).toString('utf-8'), {explicitArray:false}, function(err, result){
           if (err){
             ctx.logger.error(err);
